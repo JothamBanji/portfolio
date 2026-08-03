@@ -81,3 +81,19 @@ document.addEventListener('pointermove', event => {
   card.style.setProperty('--mouse-x', `${event.clientX - rect.left}px`);
   card.style.setProperty('--mouse-y', `${event.clientY - rect.top}px`);
 });
+
+
+// Animate skill indicators when the skills section enters view.
+const skillItems = document.querySelectorAll('.skill-item');
+if (skillItems.length) {
+  const skillObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const level = entry.target.dataset.level || '0';
+      const bar = entry.target.querySelector('.skill-track span');
+      if (bar) bar.style.width = `${level}%`;
+      skillObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.35 });
+  skillItems.forEach(item => skillObserver.observe(item));
+}

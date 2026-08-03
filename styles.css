@@ -444,3 +444,27 @@ main > section:last-of-type::before {
     display: none;
   }
 }
+
+
+/* Portfolio v2 additions */
+.section-kicker{color:#8f8cff;font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.65rem}
+.section-intro{max-width:700px;margin-top:1rem;color:var(--muted);line-height:1.7}
+.skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+.skill-group{min-height:100%;position:relative;overflow:hidden}
+.skill-group-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+.skill-group-header h3{font-size:1.12rem;margin:0}
+.skill-group-header p{font-size:.78rem;color:var(--muted);margin-top:.2rem}
+.skill-icon{width:2.7rem;height:2.7rem;display:grid;place-items:center;border-radius:.8rem;background:rgba(99,102,241,.14);border:1px solid rgba(129,140,248,.25);color:#a6a4ff;font-family:'Space Grotesk',sans-serif;font-weight:700}
+.skill-list{display:grid;gap:1rem}
+.skill-item>div:first-child{display:flex;justify-content:space-between;gap:1rem;margin-bottom:.45rem;font-size:.86rem}
+.skill-item small{font-size:.68rem;color:var(--muted)}
+.skill-track{height:.42rem;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
+.skill-track span{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#5651d8,#9693ff);box-shadow:0 0 14px rgba(129,140,248,.35);transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.25rem}
+.skill-tags span{padding:.38rem .65rem;border-radius:999px;background:rgba(255,255,255,.045);border:1px solid rgba(148,163,184,.12);font-size:.7rem;color:#c4c5d6}
+.cv-button{border-color:rgba(129,140,248,.32);background:rgba(99,102,241,.08)}
+.cta-actions{display:flex;justify-content:center;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:2.5rem}
+.cta-actions>a{margin-top:0!important}
+.cta-secondary{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(129,140,248,.3);border-radius:999px;padding:.875rem 1.5rem;color:#fff;font-size:.875rem;font-weight:500;background:rgba(255,255,255,.04);transition:.25s ease}
+.cta-secondary:hover{transform:translateY(-2px);background:rgba(129,140,248,.11);border-color:rgba(129,140,248,.55)}
+@media(max-width:767px){.skills-grid{grid-template-columns:1fr}.skill-group{padding:1.25rem}.cta-actions{flex-direction:column}.cta-actions>a{width:100%;max-width:310px}}
