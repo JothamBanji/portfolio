@@ -82,18 +82,10 @@ document.addEventListener('pointermove', event => {
   card.style.setProperty('--mouse-y', `${event.clientY - rect.top}px`);
 });
 
-
-// Animate skill indicators when the skills section enters view.
-const skillItems = document.querySelectorAll('.skill-item');
-if (skillItems.length) {
-  const skillObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const level = entry.target.dataset.level || '0';
-      const bar = entry.target.querySelector('.skill-track span');
-      if (bar) bar.style.width = `${level}%`;
-      skillObserver.unobserve(entry.target);
-    });
-  }, { threshold: 0.35 });
-  skillItems.forEach(item => skillObserver.observe(item));
+// Solid navigation background once the page scrolls.
+const siteNav = document.querySelector('.site-nav');
+if (siteNav) {
+  const updateNav = () => siteNav.classList.toggle('scrolled', window.scrollY > 24);
+  updateNav();
+  window.addEventListener('scroll', updateNav, { passive: true });
 }
