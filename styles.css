@@ -529,3 +529,5 @@ main > section:last-of-type::before {
 }
 @media(max-width:480px){.nav-inner{width:calc(100% - 2.1rem)}}
 @media(prefers-reduced-motion:reduce){.status-dot{animation:none}}
+.inline-link{color:#a5b4fc;text-decoration:underline;text-underline-offset:3px}.inline-link:hover{color:#fff}
+.more-link{color:var(--muted)}
